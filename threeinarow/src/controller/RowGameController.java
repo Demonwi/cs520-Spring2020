@@ -18,7 +18,7 @@ import view.RowGameGUI;
  * principles and needs a thorough overhaul to improve readability,
  * extensibility, and testability.
  */
-public class RowGameController {
+public class RowGameController implements RowGameRulesStrategy {
     private static final String GAME_END_NOWINNER = "Game ends in a draw";
     private static final String GAME_END_WINNER_ONE = "Player 1 wins!";
     private static final String GAME_END_WINNER_TWO = "Player 2 wins!";
@@ -385,7 +385,7 @@ public class RowGameController {
 	    }
 	}
 
-	gameModel.stateChange();
+	gameView.update(gameModel);
     }
 
     /**
@@ -398,7 +398,7 @@ public class RowGameController {
 	    }
 	}
 
-	gameModel.stateChange();
+	gameView.update(gameModel);
     }
 
     /**
@@ -416,6 +416,6 @@ public class RowGameController {
 	gameModel.movesLeft = 9;
 	gameModel.setFinalResult(null);
 
-	gameModel.stateChange();
+	gameView.update(gameModel);
     }
 }

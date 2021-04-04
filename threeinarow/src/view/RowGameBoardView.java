@@ -13,20 +13,20 @@ import javax.swing.JPanel;
 
 import controller.RowGameController;
 import model.RowGameModel;
-
+import controller.RowGameRulesStrategy;
 
 public class RowGameBoardView implements RowGameView
 {
     public JButton[][] blocks = new JButton[3][3];
     public JPanel gamePanel = new JPanel(new FlowLayout());
 
-    
-    public RowGameBoardView(RowGameController gameController) {
+
+    public RowGameBoardView(RowGameRulesStrategy gameController) {
 	super();
 
         JPanel game = new JPanel(new GridLayout(3,3));
         gamePanel.add(game, BorderLayout.CENTER);
-	
+
        // Initialize a JButton for each cell of the 3x3 game board.
         for(int row = 0; row<3; row++) {
             for(int column = 0; column<3 ;column++) {
@@ -39,7 +39,7 @@ public class RowGameBoardView implements RowGameView
                     }
                 });
             }
-        }	
+        }
     }
 
     /**
@@ -53,11 +53,11 @@ public class RowGameBoardView implements RowGameView
 	    for (int column = 0; column < 3; column++) {
 		this.updateBlock(gameModel, row, column);
 	    } // end for col
-	} // end for row	
+	} // end for row
     }
 
     /**
-     * Updates the block view at the given row and column 
+     * Updates the block view at the given row and column
      * after the game model changes state.
      *
      * @param gameModel The game model
@@ -66,6 +66,6 @@ public class RowGameBoardView implements RowGameView
      */
     protected void updateBlock(RowGameModel gameModel, int row, int col) {
 	blocks[row][col].setText(gameModel.blocksData[row][col].getContents());
-	blocks[row][col].setEnabled(gameModel.blocksData[row][col].getIsLegalMove());	
+	blocks[row][col].setEnabled(gameModel.blocksData[row][col].getIsLegalMove());
     }
 }

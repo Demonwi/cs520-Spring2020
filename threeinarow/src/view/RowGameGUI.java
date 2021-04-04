@@ -7,8 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import model.RowGameModel;
-import controller.RowGameController;
-
+import controller.RowGameRulesStrategy;
 
 public class RowGameGUI implements RowGameView
 {
@@ -16,16 +15,16 @@ public class RowGameGUI implements RowGameView
     public RowGameBoardView gameBoardView;
     public JButton reset = new JButton("Reset");
     public RowGameStatusView gameStatusView;
-    
-    private RowGameController gameController;
+
+    private RowGameRulesStrategy gameController;
 
 
     /**
      * Creates a new game initializing the GUI.
      */
-    public RowGameGUI(RowGameController gameController) {
+    public RowGameGUI(RowGameRulesStrategy gameController) {
 	this.gameController = gameController;
-	
+
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gui.setSize(new Dimension(500, 350));
         gui.setResizable(true);

@@ -1,15 +1,22 @@
 package controller;
 
 import model.RowGameModel;
+import javax.swing.JButton;
+import model.RowGameModel;
+import view.RowGameGUI;
 
 
 public interface RowGameRulesStrategy
 {
-    public void reset(RowGameModel gameModel);
+    public RowGameModel getModel();
 
-    public void move(RowGameModel gameModel, int row, int col);
+    public RowGameGUI getView();
 
-    public boolean isWin(RowGameModel gameModel);
+    public void startUp();
 
-    public boolean isTie(RowGameModel gameModel);
+    public void resetGame();
+
+    public void move(JButton block);
+
+    public void endGame();
 }

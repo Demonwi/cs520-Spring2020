@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import controller.RowGameController;
+import controller.RowGameRulesStrategy;
 import model.RowGameModel;
 
 
@@ -15,8 +16,8 @@ public class RowGameStatusView implements RowGameView
     public JTextArea playerturn = new JTextArea();
     public JPanel messages = new JPanel(new FlowLayout());
 
-    
-    public RowGameStatusView(RowGameController gameController) {
+
+    public RowGameStatusView(RowGameRulesStrategy gameController) {
 	super();
 
 	messages.setBackground(Color.white);
@@ -34,6 +35,6 @@ public class RowGameStatusView implements RowGameView
 	}
 	else {
 	    playerturn.setText(gameModel.getFinalResult());
-	}	
+	}
     }
 }

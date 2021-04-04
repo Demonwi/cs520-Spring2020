@@ -18,7 +18,7 @@ import view.RowGameGUI;
  * principles and needs a thorough overhaul to improve readability,
  * extensibility, and testability.
  */
-public class RowGameController {
+public class TttGameController implements RowGameRulesStrategy{
     private static final String GAME_END_NOWINNER = "Game ends in a draw";
     private static final String GAME_END_WINNER_ONE = "Player 1 wins!";
     private static final String GAME_END_WINNER_TWO = "Player 2 wins!";
@@ -30,20 +30,15 @@ public class RowGameController {
     /**
      * Creates a new game initializing the GUI.
      */
-    public RowGameController() {
+    public TttGameController() {
     	gameModel = new RowGameModel();
     	gameView = new RowGameGUI(this);
       gameModel.register(gameView);
-      // Set every move to legal
-      for(int a = 0; a < 3; a++){
-        for(int b = 0; b < 3; b++){
-          gameModel.blocksData[a][b].setIsLegalMove(true);
-        }
-      }
 
 
     	resetGame();
     }
+
 
     public RowGameModel getModel() {
 	return this.gameModel;
@@ -405,7 +400,7 @@ public class RowGameController {
             for(int column = 0;column<3;column++) {
                 gameModel.blocksData[row][column].reset();
 		// Enable the bottom row
-	        gameModel.blocksData[row][column].setIsLegalMove(row == 2);
+	        gameModel.blocksData[row][column].setIsLegalMove(true);
             }
         }
 	gameModel.player = "1";

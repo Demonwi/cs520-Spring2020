@@ -1,4 +1,5 @@
 import controller.RowGameController;
+import controller.TttGameController;
 import java.util.Scanner;
 
 public class RowGameApp
@@ -12,16 +13,16 @@ public class RowGameApp
       while(true){
         System.out.println("Enter 1 for Tic Tac Toe and 2 for Three in a Row");
         input = myObj.nextLine();
-        if(input == "1"){
-          RowGameController game = new RowGameController();
+        if(input.equals("1")){
+          TttGameController game = new TttGameController();
         	game.startUp();
           break;
-        }else if(input == "2"){
+        }else if(input.equals("1")){
           RowGameController game = new RowGameController();
         	game.startUp();
           break;
         }else{
-          System.out.println("Input not recognized");
+          System.out.println("Input not recognized " + input + ".  ");
         }
       }
     	RowGameController game = new RowGameController();

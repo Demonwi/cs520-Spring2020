@@ -29,6 +29,11 @@ public class TestExample {
         assertEquals (9, gameModel.movesLeft);
     }
 
+    public void testNewGame() {
+        gameModel.blockdata[0][0].reset()
+        assertEquals ("", gameModel.text);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testNewBlockViolatesPrecondition() {
 	RowBlockModel block = new RowBlockModel(null);
