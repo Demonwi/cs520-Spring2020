@@ -34,6 +34,14 @@ public class RowGameController {
     	gameModel = new RowGameModel();
     	gameView = new RowGameGUI(this);
       gameModel.register(gameView);
+      // Set every move to legal
+      for(int a = 0; a < 3; a++){
+        for(int b = 0; b < 3; b++){
+          gameModel.blocksData[a][b].setIsLegalMove(true);
+        }
+      }
+
+
     	resetGame();
     }
 
@@ -114,7 +122,6 @@ public class RowGameController {
 		gameModel.blocksData[1][0].setContents("X");
 		gameModel.blocksData[1][0].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[0][0].setIsLegalMove(true);
 		gameModel.player = "2";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
@@ -131,7 +138,6 @@ public class RowGameController {
 		gameModel.blocksData[1][1].setContents("X");
 		gameModel.blocksData[1][1].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[0][1].setIsLegalMove(true);
 		gameModel.player = "2";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
@@ -152,7 +158,6 @@ public class RowGameController {
 		gameModel.blocksData[1][2].setContents("X");
 		gameModel.blocksData[1][2].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[0][2].setIsLegalMove(true);
 		gameModel.player = "2";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[0][2].getContents()) &&
@@ -169,7 +174,6 @@ public class RowGameController {
 		gameModel.blocksData[2][0].setContents("X");
 		gameModel.blocksData[2][0].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[1][0].setIsLegalMove(true);
 		gameModel.player = "2";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
@@ -188,7 +192,6 @@ public class RowGameController {
 		gameModel.blocksData[2][1].setContents("X");
 		gameModel.blocksData[2][1].setIsLegalMove(false);
 		// Enabled the space on top of this one
-		gameModel.blocksData[1][1].setIsLegalMove(true);
 		gameModel.player = "2";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][0].getContents()) &&
@@ -205,7 +208,6 @@ public class RowGameController {
 		gameModel.blocksData[2][2].setContents("X");
 		gameModel.blocksData[2][2].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[1][2].setIsLegalMove(true);
 		gameModel.player = "2";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
@@ -276,7 +278,6 @@ public class RowGameController {
 		gameModel.blocksData[1][0].setContents("O");
 		gameModel.blocksData[1][0].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[0][0].setIsLegalMove(true);
 		gameModel.player = "1";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
@@ -293,7 +294,6 @@ public class RowGameController {
 		gameModel.blocksData[1][1].setContents("O");
 		gameModel.blocksData[1][1].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[0][1].setIsLegalMove(true);
 		gameModel.player ="1";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
@@ -314,7 +314,6 @@ public class RowGameController {
 		gameModel.blocksData[1][2].setContents("O");
 		gameModel.blocksData[1][2].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[0][2].setIsLegalMove(true);
 		gameModel.player ="1";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[0][2].getContents()) &&
@@ -331,7 +330,6 @@ public class RowGameController {
 		gameModel.blocksData[2][0].setContents("O");
 		gameModel.blocksData[2][0].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[1][0].setIsLegalMove(true);
 		gameModel.player ="1";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
@@ -350,7 +348,6 @@ public class RowGameController {
 		gameModel.blocksData[2][1].setContents("O");
 		gameModel.blocksData[2][1].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[1][1].setIsLegalMove(true);
 		gameModel.player ="1";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][0].getContents()) &&
@@ -367,7 +364,6 @@ public class RowGameController {
 		gameModel.blocksData[2][2].setContents("O");
 		gameModel.blocksData[2][2].setIsLegalMove(false);
 		// Enable the space on top of this one
-		gameModel.blocksData[1][2].setIsLegalMove(true);
 		gameModel.player = "1";
 		if(movesLeft<7) {
 		    if((gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
