@@ -32,7 +32,7 @@ public class TttGameController implements RowGameRulesStrategy{
      */
     public TttGameController() {
     	gameModel = new RowGameModel();
-    	gameView = new RowGameGUI(this);
+    	gameView = new RowGameGUI(this, "Tic Tac Toe");
       gameModel.register(gameView);
 
 

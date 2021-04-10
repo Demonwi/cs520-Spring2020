@@ -66,6 +66,7 @@ public class RowGameBoardView implements RowGameView
      */
     protected void updateBlock(RowGameModel gameModel, int row, int col) {
 	blocks[row][col].setText(gameModel.blocksData[row][col].getContents());
+  // System.out.println(gameModel.blocksData[row][col].getIsLegalMove());
 	blocks[row][col].setEnabled(gameModel.blocksData[row][col].getIsLegalMove());
     }
 }

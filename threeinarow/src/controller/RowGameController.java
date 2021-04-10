@@ -32,7 +32,7 @@ public class RowGameController implements RowGameRulesStrategy {
      */
     public RowGameController() {
     	gameModel = new RowGameModel();
-    	gameView = new RowGameGUI(this);
+    	gameView = new RowGameGUI(this, "Three in a Row");
       gameModel.register(gameView);
     	resetGame();
     }
@@ -405,6 +405,7 @@ public class RowGameController implements RowGameRulesStrategy {
      * Resets the game to be able to start playing again.
      */
     public void resetGame() {
+      // System.out.println("Reseting Row Game");
         for(int row = 0;row<3;row++) {
             for(int column = 0;column<3;column++) {
                 gameModel.blocksData[row][column].reset();

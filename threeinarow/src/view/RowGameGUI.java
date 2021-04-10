@@ -11,7 +11,7 @@ import controller.RowGameRulesStrategy;
 
 public class RowGameGUI implements RowGameView
 {
-    public JFrame gui = new JFrame("Three in a Row");
+    public JFrame gui;
     public RowGameBoardView gameBoardView;
     public JButton reset = new JButton("Reset");
     public RowGameStatusView gameStatusView;
@@ -22,7 +22,8 @@ public class RowGameGUI implements RowGameView
     /**
      * Creates a new game initializing the GUI.
      */
-    public RowGameGUI(RowGameRulesStrategy gameController) {
+    public RowGameGUI(RowGameRulesStrategy gameController, String guiText) {
+      gui = new JFrame(guiText);
 	this.gameController = gameController;
 
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

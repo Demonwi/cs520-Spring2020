@@ -29,7 +29,7 @@ public class TestExample {
         assertEquals (9, gameModel.movesLeft);
     }
 
-    public void testNewGame() {
+    public void testBlock() {
         gameModel.blockdata[0][0].reset()
         assertEquals ("", gameModel.text);
     }

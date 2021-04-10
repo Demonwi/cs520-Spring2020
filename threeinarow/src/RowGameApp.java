@@ -17,7 +17,7 @@ public class RowGameApp
           TttGameController game = new TttGameController();
         	game.startUp();
           break;
-        }else if(input.equals("1")){
+        }else if(input.equals("2")){
           RowGameController game = new RowGameController();
         	game.startUp();
           break;
@@ -25,7 +25,5 @@ public class RowGameApp
           System.out.println("Input not recognized " + input + ".  ");
         }
       }
-    	RowGameController game = new RowGameController();
-    	game.startUp();
     }
 }
