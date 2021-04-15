@@ -98,7 +98,7 @@ public class ThreeInARowGame {
 	} else{
 	    playerturn.setText("'O': Player 2");
 	}
-	
+
 	if(player.equals("1")) {
 	    // Check whether player 1 won
 	    if(block==blocks[0][0]) {
@@ -457,13 +457,14 @@ public class ThreeInARowGame {
     }
 
     /**
-     * Updates the block at the given row and column 
+     * Updates the block at the given row and column
      * after one of the player's moves.
      *
      * @param row The row that contains the block
      * @param column The column that contains the block
      */
     protected void updateBlock(int row, int column) {
+      Logger.log("updates");
 	blocks[row][column].setText(blocksData[row][column].getContents());
 	blocks[row][column].setEnabled(blocksData[row][column].getIsLegalMove());
     }

@@ -30,7 +30,7 @@ public class ThreeInARowBlock
 	if (game == null) {
 	    throw new IllegalArgumentException("The game must be non-null.");
 	}
-	
+
 	this.game = game;
 	this.reset();
     }
@@ -46,6 +46,7 @@ public class ThreeInARowBlock
      * @throws IllegalArgumentException When the given value is null
      */
     public void setContents(String value) {
+      Logger.log("manipulates");
 	if (value == null) {
 	    throw new IllegalArgumentException("The value must be non-null.");
 	}
@@ -73,6 +74,7 @@ public class ThreeInARowBlock
      * Resets this block before starting a new game.
      */
     public void reset() {
+      Logger.log("manipulates");
 	this.contents = "";
 	this.isLegalMove = false;
     }
